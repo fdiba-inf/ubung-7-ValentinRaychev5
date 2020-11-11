@@ -8,30 +8,27 @@ public class Triangle {
 
         System.out.print("Enter n: ");
         int n = input.nextInt();
-        printTop(1, n);
-
-
-        for (int rows = n - 1; rows > 0; rows--)  {
-          for (int count = 1; count <= rows; count++)  {
-            System.out.print(count + " ");
-          }
-          if  (rows != 1)  {
-              System.out.println();
-            }
-        }
-    }
-
-    public static void printTop(int start, int end) {
-        String currentPrint = "";
-        for (start = 1; start <= end; start++)  {
-          currentPrint += (start + " ");
-          System.out.print(currentPrint);
+        for (int row = 1; row <= n; row++)  {
+          printLine(1, row);
           System.out.println();
         }
-    }
-    public static void printBottom(int start, int end) {
-        for (int i = end; i < start; i++)  {
-          
+
+        for (int row = n - 1; row > 0; row--)  {
+          printLine(1, row);
+          if  (row != 1)  {
+            System.out.println();
+          }
         }
+    }
+
+    public static void printLine(int start, int end) {
+      for (int col = start; col <= end; col++)  {
+        if  (col != end)  {
+          System.out.print(col + " ");
+        }
+        else  {
+          System.out.print(col);
+        }
+      }
     }
 }

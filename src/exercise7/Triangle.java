@@ -13,7 +13,7 @@ public class Triangle {
 
         for (int rows = n - 1; rows > 0; rows--)  {
           for (int count = 1; count <= rows; count++)  {
-            System.out.print(count);
+            System.out.print(count + " ");
           }
           if  (rows != 1)  {
               System.out.println();
@@ -24,7 +24,7 @@ public class Triangle {
     public static void printTop(int start, int end) {
         String currentPrint = "";
         for (start = 1; start <= end; start++)  {
-          currentPrint += start;
+          currentPrint += (start + " ");
           System.out.print(currentPrint);
           System.out.println();
         }

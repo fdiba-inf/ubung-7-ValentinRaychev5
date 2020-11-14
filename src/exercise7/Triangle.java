@@ -8,15 +8,27 @@ public class Triangle {
 
         System.out.print("Enter n: ");
         int n = input.nextInt();
-
-        for (int line = 1; line <= n; line++) {
-            printLine(1, line);
+        for (int row = 1; row <= n; row++)  {
+          printLine(1, row);
+          System.out.println();
         }
 
-        // Print the bottom part of the triangle that is under the longest line
+        for (int row = n - 1; row > 0; row--)  {
+          printLine(1, row);
+          if  (row != 1)  {
+            System.out.println();
+          }
+        }
     }
 
     public static void printLine(int start, int end) {
-        // Implement method
+      for (int col = start; col <= end; col++)  {
+        if  (col != end)  {
+          System.out.print(col + " ");
+        }
+        else  {
+          System.out.print(col);
+        }
+      }
     }
 }

@@ -9,29 +9,30 @@ public class RecursivePrimePrinter {
         System.out.print("Enter n: ");
         int n = input.nextInt();
 
-
         printPrimes(n);
     }
 
     public static void printPrimes(int n) {
-      for (int i = n; i > 0; i--)  {
-        if (isPrime(n) == true)  {
-          System.out.println(n);
+      
+        if (n == 1) {
+            System.out.print(n);
+            return;
         }
-      }
+        if (isPrime(n)) {
+            System.out.println(n);
+        }
+        printPrimes(n - 1);
     }
 
     public static boolean isPrime(int n) {
-
-        int i = 2;
-        boolean prime = true;
-        while(n > i) {
-          if(n % i == 0)  {
-            prime = false;
-            break;
-          }
-          i++;
+        
+        boolean primeNum = true;
+        for (int i = 2; i <= n/2; i++) {
+            if (n % i == 0) {
+                primeNum = false;
+                break;
+            }
         }
-        return prime;
+        return primeNum;
     }
 }
